@@ -1,0 +1,32 @@
+{
+  "1": {
+    "name": "Gouda",
+    "url": "https://cheese.com/media/img/cheese/GOUDA_SqYJjRh.jpg",
+    "pricePerKilo": 5,
+    "colour": "yellow"
+  },
+  "2": {
+    "name": "American Cheese",
+    "url": "https://cheese.com/media/img/cheese-thumbs/10-American-Cheese-shutterstock_1610208106.jpg",
+    "pricePerKilo": 4,
+    "colour": "yellow"
+  },
+  "3": {
+    "name": "Smoked Gouda",
+    "url": "https://cheese.com/media/img/cheese-thumbs/smoked_Gouda.jpg",
+    "pricePerKilo": 6,
+    "colour": "pale yellow"
+  },
+  "4": {
+    "name": "Gorgonzola",
+    "url": "https://cheese.com/media/img/cheese/Gorgonzola_niUHULx.jpg",
+    "pricePerKilo": 6,
+    "colour": "yellow"
+  },
+  "5": {
+    "name": "Provolone",
+    "url": "https://cheese.com/media/img/cheese/Provolone.jpg",
+    "pricePerKilo": 2,
+    "colour": "pale yellow"
+  }
+}
