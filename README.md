@@ -21,6 +21,12 @@ npm i
 npm run start
 ```
 
+or have docker desktop installed and run
+
+```
+docker compose build; docker compose up
+```
+
 ## React app
 
 Go into the ui directory.
@@ -30,9 +36,14 @@ Run
 ```
 npm i
 npm run start
+
 ```
 
 You should be able to see 5 cheese images now with the ability to create, update and delete items.
+
+## Swagger doc
+
+Swagger docs can be accessed at http://localhost/docs
 
 # Future Considerations / Limitations
 

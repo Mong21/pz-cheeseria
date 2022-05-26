@@ -2,8 +2,8 @@ version: "3"
 services:
   app:
     container_name: app
-    restart: always
-    build: .
-    network_mode: "host"
+    build:
+      context: .
     ports:
-      - "8080:3001"
+      - "3001:3001"
+    image: fastify_api

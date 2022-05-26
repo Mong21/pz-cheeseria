@@ -14,10 +14,10 @@ import { CheeseStorageFormat, CheeseUpdate, Cheese } from "./types";
 import { default as cheeses } from "./db.json";
 
 const DATABASE = "db.json";
-const PORT = 8080;
-const server: FastifyInstance = Fastify({ logger: true });
+const PORT = 3001;
+const server: FastifyInstance = Fastify();
 
-server.register(require("fastify-cors"), {
+server.register(require("@fastify/cors"), {
   origin: "*",
   methods: ["POST", "DELETE", "PUT"],
 });
@@ -109,7 +109,7 @@ server.delete<{ Body: { id: string } }>(
 
 (() => {
   try {
-    server.listen(PORT);
+    server.listen({ port: PORT, host: "0.0.0.0" });
   } catch (err) {
     server.log.error(err);
     process.exit(1);

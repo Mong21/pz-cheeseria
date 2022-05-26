@@ -24,10 +24,6 @@ export interface Cheese {
   colour: string;
 }
 
-interface Props extends Cheese {
-  refetch: () => void;
-}
-
 const marks = [
   {
     value: 0,
@@ -43,8 +39,7 @@ const marks = [
   },
 ];
 
-export const MediaCard: React.FC<Props> = ({
-  refetch,
+export const MediaCard: React.FC<Cheese> = ({
   id,
   name,
   url,
@@ -64,7 +59,6 @@ export const MediaCard: React.FC<Props> = ({
         pricePerKilo,
         colour,
       });
-      refetch();
     } catch (err) {
       console.log(err);
     }
@@ -77,7 +71,6 @@ export const MediaCard: React.FC<Props> = ({
           id,
         },
       });
-      refetch();
     } catch (err) {
       console.log(err);
     }

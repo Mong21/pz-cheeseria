@@ -1,4 +1,7 @@
 FROM node:16-alpine AS builder
+
+EXPOSE 3001
+
 WORKDIR .
 COPY package*.json ./
 RUN npm install
@@ -10,5 +13,4 @@ WORKDIR .
 COPY package*.json ./
 RUN npm install
 COPY --from=builder /dist ./dist
-EXPOSE 8080
 CMD npm run dev

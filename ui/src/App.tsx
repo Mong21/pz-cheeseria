@@ -43,18 +43,9 @@ const App: React.FC = () => {
         pricePerKilo,
         colour,
       });
-      refetch();
     } catch (err) {
       console.log(err);
     }
-  };
-
-  // This timer is here because the endpoint accesses the file too quickly
-  // Which will return save result before it has finished updating
-  const refetch = () => {
-    setTimeout(async () => {
-      await readCheese();
-    }, 1000);
   };
 
   useEffect(() => {
@@ -71,7 +62,6 @@ const App: React.FC = () => {
           {cheeses.map((cheese) => (
             <Grid item xs={2} md={4} key={cheese.id}>
               <MediaCard
-                refetch={refetch}
                 id={cheese.id}
                 name={cheese.name}
                 url={cheese.url}
