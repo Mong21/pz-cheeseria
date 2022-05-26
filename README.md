@@ -21,12 +21,6 @@ npm i
 npm run start
 ```
 
-or have docker desktop installed and run
-
-```
-docker compose build; docker compose up
-```
-
 ## React app
 
 Go into the ui directory.
@@ -44,6 +38,19 @@ You should be able to see 5 cheese images now with the ability to create, update
 ## Swagger doc
 
 Swagger docs can be accessed at http://localhost/docs
+
+# How to use Cheeseria UI
+
+There are some limitations, so since writing to a file reloads nodemon, it is extremely slow to update. I regret not simply using a database instead.
+
+To attach a file, use an image link address from cheese.com such as the following when using the URL input.
+
+```
+https://cheese.com/media/img/cheese-thumbs/asiago_it.jpg
+https://cheese.com/media/img/cheese-thumbs/504_feta.jpg
+```
+
+Upon creating, deleting or updating, please reload the page for it to update.
 
 # Future Considerations / Limitations
 
@@ -78,3 +85,21 @@ For simplificity, the client and server code are in one repository.
 ## Hard coded variables
 
 Could move out hard coded values to environment variables for different configuration across dev, stage and prod environments.
+
+## No cache invalidation
+
+We are using simple axios fetch that doesn't invalidate queries. So the page will have to be manually reloaded after using any crud operations.
+
+# TODO
+
+## Docker
+
+You can run docker with the following command below, but not fully functional due to nodemon.
+
+```
+docker compose build; docker compose up
+```
+
+## Unit tests
+
+To be done

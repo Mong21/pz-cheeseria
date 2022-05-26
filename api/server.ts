@@ -11,7 +11,6 @@ import {
   updateCheeseOpts,
 } from "./docs";
 import { CheeseStorageFormat, CheeseUpdate, Cheese } from "./types";
-import { default as cheeses } from "./db.json";
 
 const DATABASE = "db.json";
 const PORT = 3001;
@@ -30,7 +29,10 @@ server.register(fastifySwagger, {
   },
 });
 
+const getCheese = () => JSON.parse(fs.readFileSync("db.json", "utf8"));
+
 server.get("/cheese", readCheeseOpts, async (request, reply) => {
+  var cheeses = getCheese();
   return { cheeses, status: 200 };
 });
 
@@ -39,6 +41,8 @@ server.post<{ Body: Cheese }>(
   createCheeseOpts,
   async (request, reply) => {
     const { name, url, pricePerKilo, colour } = request.body;
+
+    var cheeses = getCheese();
 
     const id = uuidv4();
     const updatedCheeses = {
@@ -65,6 +69,8 @@ server.put<{ Body: CheeseUpdate }>(
   updateCheeseOpts,
   async (request, reply) => {
     const { id, name, url, pricePerKilo, colour } = request.body;
+
+    var cheeses = getCheese();
 
     if (!id) return { status: 400, message: "Missing id" };
     const cheeseId = Object.keys(cheeses).find((cheeseId) => cheeseId === id);
@@ -94,6 +100,8 @@ server.delete<{ Body: { id: string } }>(
   deleteCheeseOpts,
   async (request, reply) => {
     const { id } = request.body;
+
+    var cheeses = getCheese();
 
     const updatedCheeses: CheeseStorageFormat = { ...cheeses };
     delete updatedCheeses[id];
