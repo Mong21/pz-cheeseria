@@ -14,8 +14,8 @@ import { CheeseStorageFormat, CheeseUpdate, Cheese } from "./types";
 import { default as cheeses } from "./db.json";
 
 const DATABASE = "db.json";
-const PORT = 3001;
-const server: FastifyInstance = Fastify();
+const PORT = 8080;
+const server: FastifyInstance = Fastify({ logger: true });
 
 server.register(require("fastify-cors"), {
   origin: "*",

@@ -10,6 +10,30 @@ The frontend is built using React and Axios for fetching. It is very simple and 
 
 Built using node v16.13.1
 
+## Api
+
+Go into the api directory
+
+Run
+
+```
+npm i
+npm run start
+```
+
+## React app
+
+Go into the ui directory.
+
+Run
+
+```
+npm i
+npm run start
+```
+
+You should be able to see 5 cheese images now with the ability to create, update and delete items.
+
 # Future Considerations / Limitations
 
 ## File Upload
@@ -39,3 +63,7 @@ The code style is meant to be flat and simple. As the code goes, it could organi
 ## Repository
 
 For simplificity, the client and server code are in one repository.
+
+## Hard coded variables
+
+Could move out hard coded values to environment variables for different configuration across dev, stage and prod environments.
